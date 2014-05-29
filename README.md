@@ -10,7 +10,6 @@ SolrAPI
 API Usage
 ---------
 
-The instance of <b>Solr</b> parses and validates the time of construction instance:
 <pre>
 <code>
 >from SolAPI import Solr
