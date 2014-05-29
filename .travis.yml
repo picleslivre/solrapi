@@ -7,4 +7,4 @@ install:
 script:
   - python setup.py test
 before_script:
-  - cp ./conf/config.ini-TEMPLATE ./conf/config.ini
+  - cp config.ini-TEMPLATE config.ini
