@@ -63,6 +63,6 @@ How to Install?
 =================
 <pre>
 <code>
->$ pip install solrAPI
+>$ pip install SolrAPI
 </code>
 </pre>
