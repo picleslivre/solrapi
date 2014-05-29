@@ -1,7 +1,12 @@
 SolrAPI
 ========
 
-Python implementation of the basic operation in the Solr Rest
+* Python implementation of the basic operation in the Solr Rest
+* https://github.com/warner/python-versioneer
+* License: BSD
+* Compatible With: python 2.7, 3.2 and 3.3
+
+
 
 API Usage
 ---------
