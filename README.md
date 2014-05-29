@@ -19,7 +19,7 @@ API Usage
 </code>
 </pre>
 
-Using select method: <b>s.select(query) return any int (-1 any error)</b>:
+Using select method: <b>s.select(query)</b>:
 <pre>
 <code>
 >>>s.select('id:34987782')
