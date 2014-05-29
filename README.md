@@ -7,7 +7,7 @@ SolrAPI
 
 [![Build Status](https://travis-ci.org/picleslivre/solrapi.svg)](https://travis-ci.org/picleslivre/solrapi)
 
-See Build: https://travis-ci.org/picleslivre/solrapi/requests
+See Build: https://travis-ci.org/picleslivre/solrapi
 
 API Usage
 ---------
