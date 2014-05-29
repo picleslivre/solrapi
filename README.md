@@ -5,7 +5,9 @@ SolrAPI
 * License: BSD
 * Compatible With: python 2.7, 3.2 and 3.3
 
-image:: https://travis-ci.org/picleslivre/solrapi.svg
+[![Build Status](https://travis-ci.org/picleslivre/solrapi.svg)](https://travis-ci.org/picleslivre/solrapi)
+
+See Build: https://travis-ci.org/picleslivre/solrapi/requests
 
 API Usage
 ---------
