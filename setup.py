@@ -23,7 +23,7 @@ setup(
     py_modules=['SolrAPI'],
     keywords='solr api lucene rest',
     maintainer_email='atta.jamil@gmail.com',
-    download_url=''
+    download_url='',
     classifiers=[
         "Topic :: System",
         "Topic :: Utilities",
@@ -37,6 +37,6 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules"
     ],
     setup_requires=["requests", "lxml"],
-    tests_require = tests_require,
+    tests_require=tests_require,
     test_suite='tests'
 )
