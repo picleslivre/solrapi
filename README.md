@@ -3,7 +3,7 @@ SolrAPI
 
 * Python implementation of the basic operation in the Solr Rest
 * License: BSD
-* Compatible With: python 2.7, 3.2 and 3.3
+* Compatible With: python 2.7, 3.2 and 3.4
 
 [![Build Status](https://travis-ci.org/picleslivre/solrapi.svg)](https://travis-ci.org/picleslivre/solrapi)
 
