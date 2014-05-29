@@ -23,9 +23,7 @@ Using select method: <b>s.select(query) return any int (-1 any error)</b>:
 <pre>
 <code>
 >>>s.select('id:34987782')
-0 (success)
->>>s.select('collection:usa')
--1 (error)
+Return Solr json
 </code>
 </pre>
 
