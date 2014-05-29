@@ -39,7 +39,7 @@ Using delete method: <b>s.delete(query, commit=True/False) return any int by Sol
 </code>
 </pre>
 
-Using update method: <b>s.delete(query, commit=True/False) return any int by Solr otherwise -1(error)</b>:
+Using update method: <b>s.update(query, commit=True/False) return any int by Solr otherwise -1(error)</b>:
 <pre>
 <code>
 >>>s.update('<doc><add><field name="id">XXX</field><field name="field_name">YYY</field></add></doc>')
