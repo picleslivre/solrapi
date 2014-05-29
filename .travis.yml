@@ -1,0 +1,10 @@
+language: python
+python:
+  - "2.7"
+  - "3.4"
+install:
+  - pip install -r requirements.txt --use-mirrors
+script:
+  - python setup.py test
+before_script:
+  - cp ./conf/config.ini-TEMPLATE ./conf/config.ini
