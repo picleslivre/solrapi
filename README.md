@@ -14,8 +14,8 @@ API Usage
 
 <pre>
 <code>
->from SolAPI import Solr
->s = Solr('http://some.solr.url')
+>>>from SolAPI import Solr
+>>>s = Solr('http://some.solr.url')
 </code>
 </pre>
 
