@@ -76,11 +76,10 @@ class Solr(object):
         if commit:
             params['commit'] = 'true'
 
-        data = add_xml.encode('utf-8')
         headers = {'Content-Type': 'text/xml; charset=utf-8'}
 
         response = requests.post(self.url + '/update?', params=params,
-                                 headers=headers, data=data, timeout=self.timeout)
+                                 headers=headers, data=add_xml, timeout=self.timeout)
 
         if response.status_code == 200:
             return int(etree.XML(response.text.encode('utf-8')).findtext('lst/int'))
