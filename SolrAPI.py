@@ -117,6 +117,6 @@ class Solr(object):
                                 headers=headers, timeout=self.timeout)
 
         if response.status_code == 200:
-            return int(etree.XML(response.text).findtext('lst/int'))
+            return int(etree.XML(response.text.encode('uft-8')).findtext('lst/int'))
         else:
             return -1
