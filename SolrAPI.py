@@ -1,7 +1,8 @@
-#coding: utf-8
+# coding: utf-8
 
 import requests
 import lxml.etree as etree
+
 
 class Solr(object):
     """
@@ -103,5 +104,20 @@ class Solr(object):
 
         if response.status_code == 200:
             return int(etree.XML(response.text.encode('utf-8')).findtext('lst/int'))
+        else:
+            return -1
+
+    def optimize(self):
+        """
+        Optimize Solr by API RESTFul.
+        """
+
+        headers = {'Content-Type': 'text/xml; charset=utf-8'}
+
+        response = requests.get(self.url + '/update?optimize=true',
+                                headers=headers, timeout=self.timeout)
+
+        if response.status_code == 200:
+            return int(etree.XML(response.text).findtext('lst/int'))
         else:
             return -1
