@@ -14,7 +14,6 @@ class Solr(object):
         Create an instance of Solr class.
 
         :param url: endpoint of Solr
-        :param log: dependence injection python built-in logging
         :param timeout: Time for any request, default: 5 seconds
         """
         self.url = url
