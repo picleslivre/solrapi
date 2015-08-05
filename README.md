@@ -65,7 +65,7 @@ How to Install?
 </code>
 </pre>
 
-In requirements.txt for develop version
-=======================================
+For develop version
+====================
 
 -e git+git@github.com:picleslivre/solrapi.git#egg=solrapi
