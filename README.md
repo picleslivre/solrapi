@@ -64,3 +64,8 @@ How to Install?
 >>>$ pip install SolrAPI
 </code>
 </pre>
+
+In requirements.txt for develop version
+=======================================
+
+-e git+git@github.com:picleslivre/solrapi.git#egg=solrapi
