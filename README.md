@@ -14,7 +14,7 @@ API Usage
 
 <pre>
 <code>
->>>from SolAPI import Solr
+>>>from SolrAPI import Solr
 >>>s = Solr('http://some.solr.url')
 </code>
 </pre>
