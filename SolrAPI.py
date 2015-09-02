@@ -107,3 +107,14 @@ class Solr(object):
                                  data=data, timeout=self.timeout)
 
         return response.text
+
+    def optimize(self):
+        """
+        Optimize Solr by API RESTFul.
+        """
+
+        headers = {'Content-Type': 'text/xml; charset=utf-8'}
+
+        response = requests.get(self.url + '/update?optimize=true',
+                                headers=headers, timeout=self.timeout)
+        return response.text

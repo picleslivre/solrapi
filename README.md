@@ -2,14 +2,21 @@ SolrAPI
 ========
 [![Build Status](https://secure.travis-ci.org/scieloorg/solrapi.png?branch=master)](https://travis-ci.org/scieloorg/solrapi)
 
+* Python implementation of the basic operation in the Solr Rest
+* License: BSD
+* Compatible With: python 2.7, 3.2 and 3.4
+
+[![Build Status](https://travis-ci.org/picleslivre/solrapi.svg)](https://travis-ci.org/picleslivre/solrapi)
+
+See Build: https://travis-ci.org/picleslivre/solrapi
+
 API Usage
 ---------
 
-The instance of <b>Solr</b> parses and validates the time of construction instance:
 <pre>
 <code>
->from SolAPI import Solr
->s = Solr('http://some.solr.url')
+>>>from SolrAPI import Solr
+>>>s = Solr('http://some.solr.url')
 </code>
 </pre>
 
@@ -52,3 +59,8 @@ How to Install?
 >$ pip install solrAPI
 </code>
 </pre>
+
+For develop version
+====================
+
+-e git+git@github.com:picleslivre/solrapi.git#egg=solrapi
