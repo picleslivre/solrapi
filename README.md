@@ -1,6 +1,5 @@
 SolrAPI
 ========
-[![Build Status](https://secure.travis-ci.org/scieloorg/solrapi.png?branch=master)](https://travis-ci.org/scieloorg/solrapi)
 
 * Python implementation of the basic operation in the Solr Rest
 * License: BSD
