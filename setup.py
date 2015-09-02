@@ -16,7 +16,7 @@ setup(
     name="SolrAPI",
     version='0.1',
     description="Python implementation of the main operation in the Solr API Rest",
-    author="Jamil Atta Junior",
+    author="Jamil Atta",
     author_email="atta.jamil@gmail.com",
     license="BSD",
     url="https://github.com/picleslivre/solrapi",

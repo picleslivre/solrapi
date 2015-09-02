@@ -1,7 +1,6 @@
-# coding: utf-8
+#!coding: utf-8
 
 import requests
-import lxml.etree as etree
 
 
 class Solr(object):
@@ -25,6 +24,7 @@ class Solr(object):
 
         :param params: Dictionary parameters to Solr
         :param format: Format of return send to Solr, default=json
+        :param return: Solr response
         """
         params['wt'] = format
 
@@ -38,8 +38,7 @@ class Solr(object):
 
         :param query: Solr query string, see: https://wiki.apache.org/solr/SolrQuerySyntax
         :param commit: Boolean to carry out the operation
-        :param return: Return an int Solr status about the operation or -1 if
-                       HTTP status is diferent from 200
+        :param return: Solr response
         """
         params = {}
 
@@ -50,49 +49,55 @@ class Solr(object):
         data = '<delete><query>{0}</query></delete>'.format(query)
 
         response = requests.post(self.url + '/update?', params=params,
-                                headers=headers, data=data, timeout=self.timeout)
+                                 headers=headers, data=data, timeout=self.timeout)
 
-        if response.status_code == 200:
-            return int(etree.XML(response.text.encode('utf-8')).findtext('lst/int'))
-        else:
-            return -1
+        return response.text
 
-    def update(self, add_xml, commit=False):
+    def update(self, data, headers=None, commit=False):
         """
         Post list of docs to Solr.
 
         :param commit: Boolean to carry out the operation
-        :param add_xml: XML send to Solr, ex.:
+        :param headers: Dictionary content headers to send,
+                        default={'Content-Type': 'text/xml; charset=utf-8'}
+        :param data: XML or JSON send to Solr, XML ex.:
+
+        XML:
             <add>
               <doc>
                 <field name="id">XXX</field>
                 <field name="field_name">YYY</field>
               </doc>
             </add>
-        :param return: Return an int Solr status about the operation or -1 if
-                       HTTP status is diferent from 200
+
+        JSON:
+            [
+                {
+                    "id":"1",
+                    "ti":"This is just a test"
+                },
+                {...}
+            ]
+        :param return: Solr response
         """
         params = {}
         if commit:
             params['commit'] = 'true'
 
-        headers = {'Content-Type': 'text/xml; charset=utf-8'}
+        if not headers:
+            headers = {'Content-Type': 'text/xml; charset=utf-8'}
 
         response = requests.post(self.url + '/update?', params=params,
-                                 headers=headers, data=add_xml, timeout=self.timeout)
+                                 headers=headers, data=data, timeout=self.timeout)
 
-        if response.status_code == 200:
-            return int(etree.XML(response.text.encode('utf-8')).findtext('lst/int'))
-        else:
-            return -1
+        return response.text
 
     def commit(self, waitsearcher=False):
         """
         Commit uncommitted changes to Solr immediately, without waiting.
 
         :param waitsearcher: Boolean wait or not the Solr to execute
-        :param return: Return an int Solr status about the operation or -1 if
-                       HTTP status is diferent from 200
+        :param return: Solr response
         """
 
         data = '<commit waitSearcher="' + str(waitsearcher).lower() + '"/>'
@@ -101,22 +106,4 @@ class Solr(object):
         response = requests.post(self.url + '/update?', headers=headers,
                                  data=data, timeout=self.timeout)
 
-        if response.status_code == 200:
-            return int(etree.XML(response.text.encode('utf-8')).findtext('lst/int'))
-        else:
-            return -1
-
-    def optimize(self):
-        """
-        Optimize Solr by API RESTFul.
-        """
-
-        headers = {'Content-Type': 'text/xml; charset=utf-8'}
-
-        response = requests.get(self.url + '/update?optimize=true',
-                                headers=headers, timeout=self.timeout)
-
-        if response.status_code == 200:
-            return int(etree.XML(response.text.encode('uft-8')).findtext('lst/int'))
-        else:
-            return -1
+        return response.text
