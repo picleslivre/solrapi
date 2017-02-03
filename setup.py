@@ -14,7 +14,7 @@ if PY2:
 
 setup(
     name="SolrAPI",
-    version='0.1',
+    version='1.0.0',
     description="Python implementation of the main operation in the Solr API Rest",
     author="Jamil Atta",
     author_email="atta.jamil@gmail.com",
