@@ -14,7 +14,7 @@ if PY2:
 
 setup(
     name="SolrAPI",
-    version='1.1.0',
+    version='1.2.0',
     description="Python implementation of the main operation in the Solr API Rest",
     author="Jamil Atta",
     author_email="atta.jamil@gmail.com",
@@ -36,7 +36,7 @@ setup(
         "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
         "Topic :: Software Development :: Libraries :: Python Modules"
     ],
-    setup_requires=["requests>=2.18.1", "lxml>=3.7.2"],
+    install_requires=["requests>=2.18.1", "lxml>=3.7.2"],
     tests_require=tests_require,
     test_suite='tests'
 )
